@@ -1,0 +1,38 @@
+.App{
+  position: relative;
+  /* transform: translateY(250%); */
+  /* background-color: blue; */
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+div.reacts{
+  font-size: 30px;
+  position: relative;
+  left: -142px;
+  top: -18px;
+}
+button{
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+.list li{
+  font-size: 25px;
+  text-decoration: none;
+  list-style: none;
+  opacity: 0.7;
+}
+.list span{
+  padding: 0 2px;
+}
