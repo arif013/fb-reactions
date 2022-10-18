@@ -7,11 +7,19 @@ import Reactions from './components/Reactions'
 function App() {
   const [state, setState] = useState(false)
   
+    const [showReaction, setShowReaction] = useState('Like')
+    // const callBack = (value)=>{
+    //   setShowReaction(value)
+    // }
+  
+
+  
+
   function handleClick(value){
     console.log("runnig");
     if((value===false)){
       setState(()=>{
-        return <Reactions/>
+        return <Reactions changeReaction ={showReaction => setShowReaction(showReaction)}/>
       })
       console.log("yess")
     }else{
@@ -27,7 +35,9 @@ function App() {
     <div className="App" onClick={()=>handleClick(true)}>
       <div className="list reacts" style={{height: '25px'}}>{ state } </div>
       <ul className='list'>
-        <button onMouseOver={() => handleClick(false)}   ><li><FontAwesomeIcon icon={faThumbsUp} /><span> Like</span></li></button>
+        <button  onMouseOver={() => handleClick(false)} onMouseLeave={()=>{setTimeout(() => {
+          handleClick(true)
+        }, 1000);}}  ><li><FontAwesomeIcon icon={faThumbsUp} /><span> {showReaction}</span></li></button>
         <button><li><FontAwesomeIcon icon={faComment}/><span> Comment</span></li></button>
         <button><li><FontAwesomeIcon icon={faShareSquare } /><span> Share</span></li></button>
       </ul>
