@@ -1,25 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faThumbsUp, faComment, faShareSquare, faHeart} from "@fortawesome/free-regular-svg-icons"
+import {faThumbsUp, faComment, faShareSquare} from "@fortawesome/free-regular-svg-icons"
 import Reactions from './components/Reactions'
 
 function App() {
-  const [state, setState] = useState(false)
-  
-    const [showReaction, setShowReaction] = useState('Like')
-    // const callBack = (value)=>{
-    //   setShowReaction(value)
-    // }
-  
-
-  
+  const [state, setState] = useState(false) 
 
   function handleClick(value){
     console.log("runnig");
     if((value===false)){
       setState(()=>{
-        return <Reactions changeReaction ={showReaction => setShowReaction(showReaction)}/>
+        return <Reactions  />
       })
       console.log("yess")
     }else{
@@ -33,14 +25,16 @@ function App() {
   }  
   return (
     <div className="App" onClick={()=>handleClick(true)}>
-      <div className="list reacts" style={{height: '25px'}}>{ state } </div>
-      <ul className='list'>
-        <button  onMouseOver={() => handleClick(false)} onMouseLeave={()=>{setTimeout(() => {
+      <div className="elements">
+      <div className="list reacts" style={{height: '50px'}} onMouseLeave={()=>{setTimeout(() => {
           handleClick(true)
-        }, 1000);}}  ><li><FontAwesomeIcon icon={faThumbsUp} /><span> {showReaction}</span></li></button>
-        <button><li><FontAwesomeIcon icon={faComment}/><span> Comment</span></li></button>
-        <button><li><FontAwesomeIcon icon={faShareSquare } /><span> Share</span></li></button>
-      </ul>
+        }, 1500);}}>{state}</div>
+      <div className='list'>
+        <button className='like' onMouseOver={() => handleClick(false)}   ><li><FontAwesomeIcon icon={faThumbsUp} /><span> Like</span></li></button>
+        <button className='like'><li><FontAwesomeIcon icon={faComment}/><span> Comment</span></li></button>
+        <button className='like'><li><FontAwesomeIcon icon={faShareSquare } /><span> Share</span></li></button>
+      </div>
+    </div>
     </div>
   )
 }

@@ -1,37 +1,53 @@
 .App{
-  position: relative;
-  /* transform: translateY(250%); */
-  /* background-color: blue; */
+  text-align: center;
+  /* position: relative; */
   height: 100vh;
-  justify-content: center;
+  width: 100%;
+  /* justify-content: center; */
+  display: flex;
+  /* flex-direction: column; */
+}
+.elements{
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 3px 3px 30px gray; */
 }
 .list{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  box-shadow: 3px 3px 30px #b6b1b1d1;
+  border-radius: 10px;
 }
-div.reacts{
+div.list.reacts{
   font-size: 30px;
+  height: 45px;
   position: relative;
-  left: -142px;
+  left: -181px;
   top: -7px;
+  
 }
 button{
   text-decoration: none;
   border: none;
   background-color: white;
-  padding: 10px;
+  /* padding: 30px 0; */
   margin: 5px;
+  width: 200px;
+  border-radius: 4px;
 }
 
+
 .list li{
-  font-size: 25px;
+  font-size: 22px;
   text-decoration: none;
   list-style: none;
   opacity: 0.7;
+}
+button.like:hover{
+  background-color: rgb(189, 186, 186);
 }
 .list span{
   padding: 0 2px;
